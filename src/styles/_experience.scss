@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+	font-family:"Montserrat";
+}
+
+
+
+.container{
+	min-height: 50vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 0;
+}
+
+.timeline{
+	width: 80%;
+	height: auto;
+	max-width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.timeline ul{
+	list-style: none;
+
+}
+
+.timeline ul li{
+	padding: 20px;
+	background-color: #D3D3D3;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+
+
+.fa{
+	display: inline;
+}
+
+@media only screen and (min-width: 750px){
+
+	.timeline:before {
+		content: "";
+		position: absolute;
+		top:0;
+		height: 100%;
+		width: 2px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color:black;
+	}
+	.timeline ul li{
+		width: 50%;
+		margin-bottom: 50px;
+		position: relative;
+	}
+
+	.timeline ul li:nth-child(odd) {
+		float: left;
+		clear: right;
+		transform: translateX(-50px);
+		border-radius: 20px 0px 20px 20px;
+	}
+	.timeline ul li:nth-child(even) {
+		float: right;
+		clear: left;
+		transform: translateX(10px);
+		border-radius: 0px 20px 20px 20px;
+	}
+
+	.timeline-content .date {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 1px;
+  letter-spacing: 2px;
+}
+
+	/*for circle points*/
+	.timeline ul li::before{
+		content: "";
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		background-color: black;
+		border-radius: 50%;
+		top:0px;
+	}
+
+	.timeline ul li:nth-child(odd)::before{
+		
+		transform: translateX(50%,-50%);
+		right:-40px;
+	}
+
+	.timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+
+  .timeline ul li:hover::before {
+    background-color: aqua;
+  }
+}
